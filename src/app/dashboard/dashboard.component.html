@@ -1,0 +1,35 @@
+<div class="portfolio-container">
+    <h2>My Portfolio</h2>
+    
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." />
+  
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortBy('ticker')">Ticker</th>
+          <th (click)="sortBy('quantity')">Quantity</th>
+          <th (click)="sortBy('value')">Sector</th>
+          <th (click)="sortBy('performance')">Performance %
+            <span *ngIf="sortColumn === 'performance'">
+                {{ sortAsc ? '▲' : '▼' }}
+              </span>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredData">
+          <td>{{ item.ticker }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.value }}</td>
+          <td>{{ item.performance }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 20px; text-align: right;">
+        <button class="btn btn-primary" (click)="tradeForm()">
+            Trade Entry Form
+        </button>
+      </div>
+  </div>
+  

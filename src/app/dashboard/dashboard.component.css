@@ -1,0 +1,21 @@
+.portfolio-container {
+    padding: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    cursor: pointer;
+    text-align: left;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  input {
+    margin-bottom: 1rem;
+    padding: 6px;
+    width: 200px;
+  }
+  

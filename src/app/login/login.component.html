@@ -1,0 +1,48 @@
+<div *ngIf="isLoginFormVisible" class="login-page">
+    <div class="background-strip">
+        <div class="form-container">
+            <div class="login-card">
+              <div class="login-header">
+                <i class="fas fa-user-circle icon"></i>
+                <h5>Sign In</h5>
+                <hr />
+              </div>
+        
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="form-group">
+                  <label for="email">User Id</label>
+                  <input type="text" formControlName="email" id="email" class="form-control" placeholder="Email Id/Mobile Number" />
+                </div>
+        
+                <div class="form-group password-group">
+                  <label for="password">Password</label>
+                  <input 
+                  [type]="passwordVisible ? 'text' : 'password'"
+                  formControlName="password" id="password" class="form-control" placeholder="Password" />
+                  <span class="toggle-icon" (click)="passwordVisible = !passwordVisible">
+                    <i class="fas" [class.fa-eye]="passwordVisible" [class.fa-eye-slash]="!passwordVisible"></i>
+                  </span>
+                </div>
+        
+                <!-- <div class="form-check-section">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="staySignedIn" />
+                    <label class="form-check-label" for="staySignedIn">Stay Signed in</label>
+                  </div>
+                </div> -->
+        
+                <button class="btn btn-primary w-100" type="submit">
+                  <i class="fas fa-sign-in-alt me-2"></i> SIGN IN
+                </button>
+              </form>
+              <div class="signup-link text-center mt-3">
+                <span>Don't have an account?</span>
+                <a routerLink="/signup" class="signup-button">Sign up here</a>
+              </div>
+             
+            </div>
+          </div>
+  
+  </div>
+  </div>
+  

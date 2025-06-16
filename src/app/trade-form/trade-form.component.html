@@ -1,0 +1,33 @@
+<div class="trade-form-container">
+    <h2>Trade Entry</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="ticker">Ticker:</label>
+        <input id="ticker" [(ngModel)]="ticker" name="ticker" required />
+        <div *ngIf="submitted && !ticker" class="error">Ticker is required.</div>
+      </div>
+  
+      <div>
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" type="number" [(ngModel)]="quantity" name="quantity" required />
+        <div *ngIf="submitted && !quantity" class="error">Quantity is required.</div>
+      </div>
+  
+      <div>
+        <label for="type">Trade Type:</label>
+        <select id="type" [(ngModel)]="type" name="type" required>
+          <option value="">Select Trade Type</option>
+          <option value="buy">Buy</option>
+          <option value="sell">Sell</option>
+        </select>
+        <div *ngIf="submitted && !type" class="error">Trade type is required.</div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  
+    <p *ngIf="submitted && ticker && quantity && type" style="color: green;">
+      Trade submitted successfully for {{ ticker }} with quantity {{ quantity }}.
+    </p>
+  </div>
+  
