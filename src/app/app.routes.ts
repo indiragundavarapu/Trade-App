@@ -6,7 +6,7 @@ import { TradeFormComponent } from './trade-form/trade-form.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent }, 
-    { path: 'login', component: LoginComponent },
+    { path:'login', component: LoginComponent },
     { path:'signup', component: SignupComponent },
     { path:'dashboard', component: DashboardComponent },
     { path:'tradeForm', component: TradeFormComponent },
